@@ -3,6 +3,8 @@ import { Router } from "@angular/router";
 
 import * as camera from "nativescript-camera";
 import { Image } from "ui/image";
+import { ImageFilters } from 'nativescript-image-filters';
+import { topmost } from 'ui/frame';
 
 @Component({
   selector: "app-home",
@@ -13,6 +15,7 @@ import { Image } from "ui/image";
 export class HomeComponent implements OnInit {
 
   image = new Image();
+
 
   constructor(private router: Router) {
   }
@@ -38,5 +41,15 @@ export class HomeComponent implements OnInit {
 
   reflection() {
     console.log('reflection');
+    let filters = new ImageFilters();
+
+    filters.invert(this.image).then((result) => {
+
+      // set the pic imageSource equal to the new imageSource
+      this.image.imageSource = result;
+
+    }).catch((err) => {
+      console.log('applyFilter ERROR: ' + err);
+    });    
   }
 }
