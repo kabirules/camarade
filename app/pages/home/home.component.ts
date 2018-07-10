@@ -35,4 +35,8 @@ export class HomeComponent implements OnInit {
         console.log("Error -> " + err.message);
     });
   }
+
+  reflection() {
+    console.log('reflection');
+  }
 }
