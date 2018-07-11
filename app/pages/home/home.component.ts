@@ -6,6 +6,8 @@ import { Image } from "ui/image";
 import { ImageFilters } from 'nativescript-image-filters';
 import { topmost } from 'ui/frame';
 
+import * as Jimp from "jimp";
+
 @Component({
   selector: "app-home",
   providers: [],
@@ -39,8 +41,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  reflection() {
+  reflection_bak() {
     console.log('reflection');
+    console.log(this.image);
     let filters = new ImageFilters();
 
     filters.invert(this.image).then((result) => {
@@ -51,5 +54,15 @@ export class HomeComponent implements OnInit {
     }).catch((err) => {
       console.log('applyFilter ERROR: ' + err);
     });    
+  }
+
+  reflection() {
+    Jimp.read("logo_login.png", function (err, lenna) {
+      if (err) throw err;
+      lenna.resize(256, 256)            // resize
+           .quality(60)                 // set JPEG quality
+           .greyscale()                 // set greyscale
+           .write("lena-small-bw.jpg"); // save
+    });
   }
 }
