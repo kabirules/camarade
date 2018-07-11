@@ -19,7 +19,6 @@
 		"@angular/platform-browser": "~5.2.0",
 		"@angular/platform-browser-dynamic": "~5.2.0",
 		"@angular/router": "~5.2.0",
-		"jimp": "^0.2.28",
 		"nativescript-angular": "~5.3.0",
 		"nativescript-camera": "^4.0.2",
 		"nativescript-image-filters": "^2.0.2",
