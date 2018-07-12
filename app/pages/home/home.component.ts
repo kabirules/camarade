@@ -45,15 +45,10 @@ export class HomeComponent extends Observable implements OnInit {
   effect1() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      console.log(pic);
-
-      this._ImageFilters.replaceColor(pic, 'red', 'blue').then((result) => {
-
+      this._ImageFilters.saturationFilter(pic, 100).then((result) => {
         // set the pic imageSource equal to the new imageSource
-        this.image.imageSource = result;
-        //pic.imageSource = result;
+        pic.imageSource = result;
         console.log('success!')
-
       }).catch((err) => {
         console.log('applyFilter ERROR: ' + err);
       });    
@@ -63,15 +58,10 @@ export class HomeComponent extends Observable implements OnInit {
   effect2() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      console.log(pic);
-
-      this._ImageFilters.engrave(pic).then((result) => {
-
+      this._ImageFilters.hueFilter(pic, 100).then((result) => {
         // set the pic imageSource equal to the new imageSource
-        this.image.imageSource = result;
-        //pic.imageSource = result;
+        pic.imageSource = result;
         console.log('success!')
-
       }).catch((err) => {
         console.log('applyFilter ERROR: ' + err);
       });    

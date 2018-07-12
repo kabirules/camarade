@@ -24,7 +24,7 @@ fleaEffect(img: Image): Promise<ImageSource>
 blackFilter(img: Image): Promise<ImageSource>
 snowEffect(img: Image): Promise<ImageSource>
 shadingFilter(img: Image, shadingColor: number): Promise<ImageSource>
-saturationFilter(img: Image, level: number): Promise<ImageSource>
-hueFilter(img: Image, level: number): Promise<ImageSource>
-reflection(img: Image): Promise<ImageSource> -> WORKING OK!
-replaceColor(img: Image, fromColor: string, toColor: string): Promise<ImageSource>
+saturationFilter(img: Image, level: number): Promise<ImageSource> *********************************************--> WORKING OK! Tested with number=100
+hueFilter(img: Image, level: number): Promise<ImageSource> ****************************************************--> WORKING OK! Tested with number=100
+reflection(img: Image): Promise<ImageSource> ******************************************************************--> WORKING OK!
+replaceColor(img: Image, fromColor: string, toColor: string): Promise<ImageSource> ****************************--> APPARENTLY NOTHING CHANGED...
