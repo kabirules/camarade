@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import * as camera from "nativescript-camera";
 import { Image } from "ui/image";
 import { ImageFilters } from 'nativescript-image-filters';
-import { topmost } from 'ui/frame';
+import { topmost, Observable } from 'ui/frame';
 
 @Component({
   selector: "app-home",
@@ -12,12 +12,15 @@ import { topmost } from 'ui/frame';
   templateUrl: "./pages/home/home.html",
   styleUrls: ["./pages/home/home.css"]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent extends Observable implements OnInit {
+  
 
   image = new Image();
-
+  private _ImageFilters: ImageFilters;
 
   constructor(private router: Router) {
+    super();
+    this._ImageFilters = new ImageFilters();
   }
 
   ngOnInit() {
@@ -39,23 +42,42 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  reflection() {
-    console.log('reflection');
-    console.log(this.image);
-    let filters = new ImageFilters();
+  effect1() {
+    setTimeout(() => {
+      let pic = topmost().currentPage.getViewById('myPicture') as Image;
+      console.log(pic);
 
-    let pic = topmost().currentPage.getViewById('myPicture') as Image;
-    console.log(pic);
+      this._ImageFilters.replaceColor(pic, 'red', 'blue').then((result) => {
 
-    filters.sharpen(pic, 1).then((result) => {
+        // set the pic imageSource equal to the new imageSource
+        this.image.imageSource = result;
+        //pic.imageSource = result;
+        console.log('success!')
 
-      // set the pic imageSource equal to the new imageSource
-      this.image.imageSource = result;
-      pic.imageSource = result;
-      console.log('success!')
-
-    }).catch((err) => {
-      console.log('applyFilter ERROR: ' + err);
-    });    
+      }).catch((err) => {
+        console.log('applyFilter ERROR: ' + err);
+      });    
+    }, 150);
   }
+
+  effect2() {
+    setTimeout(() => {
+      let pic = topmost().currentPage.getViewById('myPicture') as Image;
+      console.log(pic);
+
+      this._ImageFilters.engrave(pic).then((result) => {
+
+        // set the pic imageSource equal to the new imageSource
+        this.image.imageSource = result;
+        //pic.imageSource = result;
+        console.log('success!')
+
+      }).catch((err) => {
+        console.log('applyFilter ERROR: ' + err);
+      });    
+    }, 150);
+  }
+  
+  
+
 }
