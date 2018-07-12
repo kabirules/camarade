@@ -44,13 +44,14 @@ export class HomeComponent implements OnInit {
     console.log(this.image);
     let filters = new ImageFilters();
 
-    let pic = topmost().currentPage.getViewById('myPicture');
+    let pic = topmost().currentPage.getViewById('myPicture') as Image;
     console.log(pic);
 
-    filters.invert(pic.getViewById('myPicture')).then((result) => {
+    filters.sharpen(pic, 1).then((result) => {
 
       // set the pic imageSource equal to the new imageSource
       this.image.imageSource = result;
+      pic.imageSource = result;
       console.log('success!')
 
     }).catch((err) => {
