@@ -48,7 +48,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect1() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.snowEffect(pic).then((result) => {
+      this._ImageFilters.gaussianBlur(pic).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -61,7 +61,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect2() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.fleaEffect(pic).then((result) => {
+      this._ImageFilters.createShadow(pic).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -73,7 +73,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect3() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.tintImage(pic, 1).then((result) => {
+      this._ImageFilters.sharpen(pic, 200).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -84,8 +84,8 @@ export class HomeComponent extends Observable implements OnInit {
   }  
 
   restore() {
-    let pic = topmost().currentPage.getViewById('myPicture') as Image;
-    pic = this.pic;
+    //let pic = topmost().currentPage.getViewById('myPicture') as Image;
+    //pic.imageSource = this.pic.imageSource;
   }
   
   

@@ -8,22 +8,22 @@ decreaseColorDepth(img: Image, bitOffset: number): Promise<ImageSource>
 contrast(img: Image, value: number): Promise<ImageSource>
 rotate(img: Image, degree: number): Promise<ImageSource>
 brightness(img: Image, value: number): Promise<ImageSource>
-gaussianBlur(img: Image): Promise<ImageSource>
-createShadow(img: Image): Promise<ImageSource>
-sharpen(img: Image, weight: number): Promise<ImageSource>
-meanRemoval(img: Image): Promise<ImageSource>
-smooth(img: Image, value: number): Promise<ImageSource>
-emboss(img: Image): Promise<ImageSource>
-engrave(img: Image): Promise<ImageSource>
-boost(img: Image, type: number, percent: number): Promise<ImageSource>
-roundCorner(img: Image, round: number): Promise<ImageSource>
+gaussianBlur(img: Image): Promise<ImageSource> ****************************************************************--> WORKING OK!
+createShadow(img: Image): Promise<ImageSource> ****************************************************************--> IMAGE GETS BLACK...
+sharpen(img: Image, weight: number): Promise<ImageSource> *****************************************************--> NOTHING CHANGES...
+meanRemoval(img: Image): Promise<ImageSource> *****************************************************************--> WORKING OK!
+smooth(img: Image, value: number): Promise<ImageSource> *******************************************************--> NOTHING CHANGES... (100,200)
+emboss(img: Image): Promise<ImageSource> **********************************************************************--> WORKING OK!
+engrave(img: Image): Promise<ImageSource> *********************************************************************--> WORKING OK!
+boost(img: Image, type: number, percent: number): Promise<ImageSource> ****************************************--> FAIL!
+roundCorner(img: Image, round: number): Promise<ImageSource> **************************************************--> WORKING OK!
 waterMark(img: Image, watermark: string, location: android.graphic.Point, color: string, alpha: number, size: number, underline: boolean): Promise<ImageSource>
 flip(img: Image, type: number): Promise<ImageSource> **********************************************************--> IMAGE DISAPPEARS... (1,100)
 tintImage(img: Image, degree: number): Promise<ImageSource> ***************************************************--> WORKING OK!
 fleaEffect(img: Image): Promise<ImageSource> ******************************************************************--> WORKING OK!
 blackFilter(img: Image): Promise<ImageSource> *****************************************************************--> WORKING OK! 
 snowEffect(img: Image): Promise<ImageSource> ******************************************************************--> WORKING OK! 
-shadingFilter(img: Image, shadingColor: number): Promise<ImageSource> *****************************************--> WITHE IMAGE (1, 100)
+shadingFilter(img: Image, shadingColor: number): Promise<ImageSource> *****************************************--> WHITE IMAGE (1, 100)
 saturationFilter(img: Image, level: number): Promise<ImageSource> *********************************************--> WORKING OK! Tested with number=100
 hueFilter(img: Image, level: number): Promise<ImageSource> ****************************************************--> WORKING OK! Tested with number=100
 reflection(img: Image): Promise<ImageSource> ******************************************************************--> WORKING OK!
