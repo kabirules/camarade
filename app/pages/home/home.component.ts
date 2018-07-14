@@ -32,7 +32,7 @@ export class HomeComponent extends Observable implements OnInit {
     } else {
       alert('Your camera is not working properly, mate...');
     }
-    this.pic = topmost().currentPage.getViewById('myPicture') as Image;
+    //this.pic = topmost().currentPage.getViewById('myPicture') as Image;
   }
 
   startCamera() {
@@ -48,7 +48,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect1() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.gaussianBlur(pic).then((result) => {
+      this._ImageFilters.contrast(pic, 10).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -61,7 +61,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect2() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.createShadow(pic).then((result) => {
+      this._ImageFilters.rotate(pic, 180).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -73,7 +73,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect3() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.sharpen(pic, 200).then((result) => {
+      this._ImageFilters.brightness(pic, 10).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')

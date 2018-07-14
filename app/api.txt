@@ -5,9 +5,9 @@ gamma(img: Image, red: number, green: number, blue: number): Promise<ImageSource
 colorFilter(img: Image, red: number, green: number, blue: number): Promise<ImageSource>
 sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<ImageSource>
 decreaseColorDepth(img: Image, bitOffset: number): Promise<ImageSource>
-contrast(img: Image, value: number): Promise<ImageSource>
-rotate(img: Image, degree: number): Promise<ImageSource>
-brightness(img: Image, value: number): Promise<ImageSource>
+contrast(img: Image, value: number): Promise<ImageSource> *****************************************************--> WORKING OK!
+rotate(img: Image, degree: number): Promise<ImageSource> ******************************************************--> DOES NOT ROTATE...
+brightness(img: Image, value: number): Promise<ImageSource> ***************************************************--> WORKING OK!
 gaussianBlur(img: Image): Promise<ImageSource> ****************************************************************--> WORKING OK!
 createShadow(img: Image): Promise<ImageSource> ****************************************************************--> IMAGE GETS BLACK...
 sharpen(img: Image, weight: number): Promise<ImageSource> *****************************************************--> NOTHING CHANGES...
