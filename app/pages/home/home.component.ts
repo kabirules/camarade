@@ -18,6 +18,8 @@ export class HomeComponent extends Observable implements OnInit {
   image = new Image();
   private _ImageFilters: ImageFilters;
 
+  pic: Image;
+
   constructor(private router: Router) {
     super();
     this._ImageFilters = new ImageFilters();
@@ -30,6 +32,7 @@ export class HomeComponent extends Observable implements OnInit {
     } else {
       alert('Your camera is not working properly, mate...');
     }
+    this.pic = topmost().currentPage.getViewById('myPicture') as Image;
   }
 
   startCamera() {
@@ -45,7 +48,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect1() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.saturationFilter(pic, 100).then((result) => {
+      this._ImageFilters.snowEffect(pic).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -58,7 +61,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect2() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.hueFilter(pic, 100).then((result) => {
+      this._ImageFilters.fleaEffect(pic).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -66,6 +69,23 @@ export class HomeComponent extends Observable implements OnInit {
         console.log('applyFilter ERROR: ' + err);
       });    
     }, 150);
+  }
+  effect3() {
+    setTimeout(() => {
+      let pic = topmost().currentPage.getViewById('myPicture') as Image;
+      this._ImageFilters.tintImage(pic, 1).then((result) => {
+        // set the pic imageSource equal to the new imageSource
+        pic.imageSource = result;
+        console.log('success!')
+      }).catch((err) => {
+        console.log('applyFilter ERROR: ' + err);
+      });    
+    }, 150);
+  }  
+
+  restore() {
+    let pic = topmost().currentPage.getViewById('myPicture') as Image;
+    pic = this.pic;
   }
   
   

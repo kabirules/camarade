@@ -1,8 +1,10 @@
 <StackLayout height="100%">
     <Image id="myPicture" src="~/images/bart.png" height="70%" style="margin:2%"></Image>
     <Button [text]="'START CAMERA1'" class="submit-button" (tap)="startCamera()" height="8%" style="margin:1%"></Button>
-    <GridLayout columns="*,*" rows="*" height="8%">
+    <GridLayout columns="*,*,*,*" rows="*" height="8%">
         <Button col="0" [text]="'FILTER1'" class="submit-button" (tap)="effect1()" style="margin:1%"></Button>
         <Button col="1" [text]="'FILTER2'" class="submit-button" (tap)="effect2()" style="margin:1%"></Button>
+        <Button col="2" [text]="'FILTER3'" class="submit-button" (tap)="effect3()" style="margin:1%"></Button>
+        <Button col="3" [text]="'RESTORE'" class="submit-button" (tap)="restore()" style="margin:1%"></Button>
     </GridLayout> 
 </StackLayout>

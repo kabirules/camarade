@@ -18,12 +18,12 @@ engrave(img: Image): Promise<ImageSource>
 boost(img: Image, type: number, percent: number): Promise<ImageSource>
 roundCorner(img: Image, round: number): Promise<ImageSource>
 waterMark(img: Image, watermark: string, location: android.graphic.Point, color: string, alpha: number, size: number, underline: boolean): Promise<ImageSource>
-flip(img: Image, type: number): Promise<ImageSource>
-tintImage(img: Image, degree: number): Promise<ImageSource>
-fleaEffect(img: Image): Promise<ImageSource>
-blackFilter(img: Image): Promise<ImageSource>
-snowEffect(img: Image): Promise<ImageSource>
-shadingFilter(img: Image, shadingColor: number): Promise<ImageSource>
+flip(img: Image, type: number): Promise<ImageSource> **********************************************************--> IMAGE DISAPPEARS... (1,100)
+tintImage(img: Image, degree: number): Promise<ImageSource> ***************************************************--> WORKING OK!
+fleaEffect(img: Image): Promise<ImageSource> ******************************************************************--> WORKING OK!
+blackFilter(img: Image): Promise<ImageSource> *****************************************************************--> WORKING OK! 
+snowEffect(img: Image): Promise<ImageSource> ******************************************************************--> WORKING OK! 
+shadingFilter(img: Image, shadingColor: number): Promise<ImageSource> *****************************************--> WITHE IMAGE (1, 100)
 saturationFilter(img: Image, level: number): Promise<ImageSource> *********************************************--> WORKING OK! Tested with number=100
 hueFilter(img: Image, level: number): Promise<ImageSource> ****************************************************--> WORKING OK! Tested with number=100
 reflection(img: Image): Promise<ImageSource> ******************************************************************--> WORKING OK!
