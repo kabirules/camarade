@@ -2,9 +2,9 @@ highlightImage(img: Image, color: string, radius?: number): Promise<ImageSource>
 invert(img: Image): Promise<ImageSource>
 greyScale(img: Image): Promise<ImageSource>
 gamma(img: Image, red: number, green: number, blue: number): Promise<ImageSource>
-colorFilter(img: Image, red: number, green: number, blue: number): Promise<ImageSource>
-sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<ImageSource>
-decreaseColorDepth(img: Image, bitOffset: number): Promise<ImageSource>
+colorFilter(img: Image, red: number, green: number, blue: number): Promise<ImageSource> ***********************--> WORKING OK!
+sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<ImageSource> ********--> IMAGE GETS WHITE...
+decreaseColorDepth(img: Image, bitOffset: number): Promise<ImageSource> ***************************************--> WORKING OK!
 contrast(img: Image, value: number): Promise<ImageSource> *****************************************************--> WORKING OK!
 rotate(img: Image, degree: number): Promise<ImageSource> ******************************************************--> DOES NOT ROTATE...
 brightness(img: Image, value: number): Promise<ImageSource> ***************************************************--> WORKING OK!
