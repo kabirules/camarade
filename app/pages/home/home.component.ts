@@ -48,7 +48,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect1() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.decreaseColorDepth(pic, 10).then((result) => {
+      this._ImageFilters.highlightImage(pic, 'blue').then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -61,7 +61,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect2() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.sepiaEffect(pic, 126, 126, 126, 126).then((result) => {
+      this._ImageFilters.greyScale(pic).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')
@@ -73,7 +73,7 @@ export class HomeComponent extends Observable implements OnInit {
   effect3() {
     setTimeout(() => {
       let pic = topmost().currentPage.getViewById('myPicture') as Image;
-      this._ImageFilters.colorFilter(pic, 126, 126, 126).then((result) => {
+      this._ImageFilters.invert(pic).then((result) => {
         // set the pic imageSource equal to the new imageSource
         pic.imageSource = result;
         console.log('success!')

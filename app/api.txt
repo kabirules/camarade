@@ -1,7 +1,7 @@
-highlightImage(img: Image, color: string, radius?: number): Promise<ImageSource>
-invert(img: Image): Promise<ImageSource>
-greyScale(img: Image): Promise<ImageSource>
-gamma(img: Image, red: number, green: number, blue: number): Promise<ImageSource>
+highlightImage(img: Image, color: string, radius?: number): Promise<ImageSource>  *****************************--> WORKING OK!
+invert(img: Image): Promise<ImageSource> **********************************************************************--> WORKING OK!
+greyScale(img: Image): Promise<ImageSource> *******************************************************************--> .greyScale is not a function
+gamma(img: Image, red: number, green: number, blue: number): Promise<ImageSource> *****************************--> WORKING OK!
 colorFilter(img: Image, red: number, green: number, blue: number): Promise<ImageSource> ***********************--> WORKING OK!
 sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<ImageSource> ********--> IMAGE GETS WHITE...
 decreaseColorDepth(img: Image, bitOffset: number): Promise<ImageSource> ***************************************--> WORKING OK!
